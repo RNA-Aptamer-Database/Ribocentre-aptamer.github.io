@@ -687,6 +687,40 @@ function safeString(value) {
   return String(value);
 }
 
+// 获取给定数据项对应的 mmCIF 下载链接数组
+function getMmcifDownloadUrls(data) {
+  const linker = data.Linker || data['Linker'] || '';
+  if (!linker) return [];
+
+  try {
+    const slug = linker.split('/').pop().replace(/\.html?$/i, '');
+    if (!slug) return [];
+
+    const info = window.MMCIF_INDEX && window.MMCIF_INDEX[slug];
+    if (!info) return [];
+
+    const baseUrl = (window.SITE_CFG && window.SITE_CFG.baseurl) || '';
+    const siteOrigin = (window.SITE_CFG && window.SITE_CFG.siteUrl) || window.location.origin;
+    const urls = [];
+
+    if (info.releaseZip) {
+      urls.push(info.releaseZip);
+    } else if (info.siteZip) {
+      urls.push(info.siteZip);
+    }
+
+    if (info.annotated && info.annotated.length) {
+      info.annotated.forEach(rel => {
+        urls.push(siteOrigin + baseUrl + '/apidata/colored_structures/' + rel);
+      });
+    }
+
+    return urls;
+  } catch (e) {
+    return [];
+  }
+}
+
 // 选择当前页面所有行
 function selectCurrentPage() {
   if (table && typeof table.rows === 'function') {
@@ -867,7 +901,7 @@ function exportAllResults() {
 function exportOriginalDataToCSV(dataRows, filename) {
   console.log(`开始导出CSV文件: ${filename}，包含 ${dataRows.length} 行数据`);
   
-  const headers=['Sequence Name','Aptamer Name','Category','Type','Article name','Sequence','Length','GC Content','Discovery Year','Affinity (Kd)','Description','PubMed Link'];
+  const headers=['Sequence Name','Aptamer Name','Category','Type','Article name','Sequence','Length','GC Content','Discovery Year','Affinity (Kd)','Description','PubMed Link','mmCIF Download URL'];
   const csv=[headers.join(',')];
   
   let processedCount = 0;
@@ -905,7 +939,11 @@ function exportOriginalDataToCSV(dataRows, filename) {
       if (data['Link to PubMed Entry']) {
         pubmedLink = data['Link to PubMed Entry'];
       }
-      
+
+      // 获取 mmCIF 下载链接
+      const mmcifUrls = getMmcifDownloadUrls(data);
+      const mmcifField = mmcifUrls.length ? mmcifUrls.join(' | ') : 'N/A';
+
       csv.push([
         `"${safeString(data.Named || 'N/A').replace(/"/g, '""')}"`,
         `"${safeString(aptamerName).replace(/"/g, '""')}"`,
@@ -919,6 +957,7 @@ function exportOriginalDataToCSV(dataRows, filename) {
         `"${safeString(data['Affinity'] || 'N/A').replace(/"/g, '""')}"`,
         `"${safeString(data['Ligand Description'] || 'N/A').replace(/"/g, '""')}"`,
         `"${safeString(pubmedLink).replace(/"/g, '""')}"`,
+        `"${safeString(mmcifField).replace(/"/g, '""')}"`,
       ].join(','));
       
       processedCount++;
