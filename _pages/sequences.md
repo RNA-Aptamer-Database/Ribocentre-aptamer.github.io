@@ -625,16 +625,20 @@ function buildRows(data){
       const baseUrl = (window.SITE_CFG && window.SITE_CFG.baseurl) || '';
       const siteOrigin = (window.SITE_CFG && window.SITE_CFG.siteUrl) || window.location.origin;
       const info = window.MMCIF_INDEX[slug];
+      const badge = info.composite ? '<span style="margin-left:6px;padding:2px 6px;font-size:11px;border:1px solid #bbb;border-radius:10px;color:#555;">composite</span>' : '';
+      const hint = info.annotated && info.annotated.length ? ` title="${info.annotated.length} file(s)${info.merged ? ', merged available' : ''}${info.composite ? ', composite' : ''}"` : '';
       if (info.releaseZip) {
-        mmcifCell = '<a class="button" href="' + info.releaseZip + '" download>mmCIF (zip)</a>';
+        mmcifCell = '<a class="button" href="' + info.releaseZip + '" download' + hint + '>mmCIF (zip)</a>' + badge;
       } else if (info.siteZip) {
-        mmcifCell = '<a class="button" href="' + info.siteZip + '" download>mmCIF (zip)</a>';
+        mmcifCell = '<a class="button" href="' + info.siteZip + '" download' + hint + '>mmCIF (zip)</a>' + badge;
       } else if (info.annotated && info.annotated.length) {
         const first = info.annotated[0];
         const url = siteOrigin + baseUrl + '/apidata/colored_structures/' + first;
-        mmcifCell = '<a class="button" href="' + url + '" download>mmCIF</a>';
+        mmcifCell = '<a class="button" href="' + url + '" download' + hint + '>mmCIF</a>';
         if (info.annotated.length > 1) {
-          mmcifCell += ' <span style="color:#666;font-size:12px">(+' + (info.annotated.length - 1) + ' more)</span>';
+          mmcifCell += ' <span style="color:#666;font-size:12px">(+' + (info.annotated.length - 1) + ' more)</span>' + badge;
+        } else {
+          mmcifCell += badge;
         }
       }
     }
@@ -1000,13 +1004,16 @@ function loadData(){
 
   Promise.all([seqPromise, mmcifPromise])
     .then(([json, mmcifIndex])=>{
-      // 构建 mmCIF 映射：slug -> { annotated: [paths], zip: path }
+      // 构建 mmCIF 映射：slug -> { annotated: [paths], zip: path, composite?:bool, components?:[], merged?:bool }
       const map = {};
       (mmcifIndex.items || []).forEach(it => {
         if (!it || !it.slug) return;
         const ann = it.annotated_cif_list || (it.annotated_cif ? [it.annotated_cif] : []);
         const z = it.zip || null;
-        map[it.slug] = { annotated: ann, zip: z };
+        const composite = !!it.composite;
+        const components = it.components || [];
+        const merged = (ann || []).some(p => /merged\.annotated\.cif$/i.test(p));
+        map[it.slug] = { annotated: ann, zip: z, composite, components, merged };
       });
       // 预检 zip 是否可用：优先 GitHub Releases 资产，其次站点路径
       const baseUrl = (window.SITE_CFG && window.SITE_CFG.baseurl) || '';
