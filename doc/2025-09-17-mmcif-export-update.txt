@@ -1,0 +1,137 @@
+# mmCIF 导出链路改造说明（2025-09-17）
+
+## 背景与目标
+
+- 现象：页面导出 mmCIF 时会带出“未在页面展示/选择”的结构文件；aptamer 的结构多源于结构汇总，存在“一对多”的 ID。
+- 目标：
+  - 只给“页面选中的结构”写入颜色注释；
+  - 页面若展示多个模型（例如 Beetroot 同时展示 8EYU 与 8EYW），则分别生成多份注释 mmCIF；
+  - 像 eIF4A 这类“由多个结构合并展示”的页面，支持把多个结构（含链映射）合并为一个 mmCIF 再注释；
+  - 交互兜底：页面确实没有明确 PDB ID 时，让用户输入并记录选择（可持久化）。
+
+---
+
+## 改动概览
+
+### 1) posts 数据转换增强（scripts/convert_posts_to_json.py）
+
+- 在“Structure/3D visualisation(visualization)”子节中，除了保留第一套 `pdb_info` 与 `color_schemes` 外，新增：
+  - `pdb_blocks`：按出现顺序收集该小节内所有模型（`url:'...(.pdb|.cif)'`）与对应的配色块 `selectSectionsN=[...]`；
+  - `pdb_count`：统计模型个数，便于导出器识别“页面存在多个模型”。
+- 兼容性：旧字段保持不变（首个模型写入 `pdb_info`）。
+
+### 2) mmCIF 导出器增强（scripts/export_mmcif_with_annotations.py）
+
+- 只注释页面选中模型：不再从结构汇总写入所有 ID。
+- 自动识别“页面多模型”（利用上游 `pdb_blocks`）：例如 Beetroot（8EYU、8EYW）会各自产生一份注释 CIF；
+- 交互增强（`--prompt-missing`）：页面无明确 ID 时，支持一次输入多个模型与“链映射”
+  - 推荐输入格式：`1XWP A>C,1XWU A>A`（表示旧链 A 映射为新链 C 等）；
+  - 兼容遗留输入：`1XWP:C,1XWU:A`（等价于 A>A）；
+  - 可配合 `--save-overrides` 将你的选择写入 JSON，后续自动复用。
+- 合并能力（`--multi-mode=merge`）：多模型时可生成 `merged.cif` 与 `merged.annotated.cif`；合并引擎：
+  - `--merge-engine auto|pymol|gemmi|concat`（优先 PyMOL，其次 gemmi，最后文本拼接备选）；
+  - PyMOL 路径：按链映射裁剪/改链，逻辑最可靠；
+  - Gemmi 路径：用结构对象合成并写 mmCIF，失败则退化到 concat；
+  - Concat 路径：将多个 CIF 文本拼接（稳妥通用，但不做深度语义合并）。
+- 索引增强：
+  - `pdb_list` 支持多个；
+  - 标记 `composite: true` 并输出 `components`（包含 `pdb_id` 与 `chain_map`）；
+  - 每个 aptamer 的 zip 中包含注释 CIF、可选 `merged.*`、以及 `composite.json`。
+
+---
+
+## 脚本工作流程
+
+### scripts/convert_posts_to_json.py（多模型收集）
+1. 解析 Front Matter 与页面分节。
+2. 处理 Structure 子节：
+   - 定位 3D 可视化内容；
+   - 抽取首个 `pdb_info.pdb_file_path`（兼容字段）；
+   - 扫描该小节内全部 `url:'...(.pdb|.cif)'` 与 `selectSectionsN=[...]`，依次配对生成 `pdb_blocks`；
+   - 统计 `pdb_count`；
+   - 保留首个 `color_schemes` 在顶层以兼容历史逻辑。
+3. 写入 `apidata/posts_data.json`。
+
+### scripts/export_mmcif_with_annotations.py（导出与注释）
+1. 读取合并数据，遍历 aptamer：
+   - 优先使用页面 3D viewer 的 `pdb_info.pdb_id` 或从 `pdb_file_path` 猜测；
+   - 若存在 `pdb_blocks`，识别为多模型页面；
+   - 缺失时可使用 `--prompt-missing` 交互输入（支持链映射）；
+   - 也可用 `--overrides` 预置映射，或 `--fallback-summary` 临时兜底。
+2. 生成/注释 CIF：
+   - 每个选定模型生成 `<pid>.cif` 与 `<pid>.annotated.cif`；
+   - 多模型且 `--multi-mode=merge`：按 `--merge-engine` 生成 `merged.cif` 与 `merged.annotated.cif`；
+   - 生成 `composite.json` 描述组成。
+3. 写入 zip 与 `apidata/colored_structures/index.json`。
+
+---
+
+## 使用示例
+
+1) 重建 posts 数据（包含多模型数据）
+```
+python scripts/convert_posts_to_json.py \
+  --input _posts --output apidata/posts_data.json --verbose
+```
+
+2) Beetroot（页面多模型，分别注释）
+```
+python scripts/export_mmcif_with_annotations.py \
+  --single Beetroot-aptamer \
+  --merged apidata/merged_data_0907.json \
+  --output apidata/colored_structures \
+  --verbose
+```
+
+3) eIF4A（两个结构 + 链映射 + 合并）
+```
+python scripts/export_mmcif_with_annotations.py \
+  --single eIF4A-aptamer \
+  --prompt-missing --multi-mode merge --merge-engine auto \
+  --merged apidata/merged_data_0907.json \
+  --output apidata/colored_structures \
+  --verbose
+# 提示时输入：1XWP A>C,1XWU A>A
+```
+
+4) 持久化覆盖（免交互）
+```
+# apidata/pdb_overrides.json
+{
+  "eIF4A-aptamer": {
+    "composite": [
+      {"pdb_id": "1XWP", "chain_map": [["A","C"]]},
+      {"pdb_id": "1XWU", "chain_map": [["A","A"]]}
+    ],
+    "mode": "merge"
+  },
+  "Beetroot-aptamer": ["8EYU", "8EYW"]
+}
+
+python scripts/export_mmcif_with_annotations.py \
+  --overrides apidata/pdb_overrides.json \
+  --merged apidata/merged_data_0907.json \
+  --output apidata/colored_structures \
+  --verbose
+```
+
+---
+
+## 兼容性与注意事项
+
+- 未安装 PyMOL/gemmi 时，将自动退化到安全的 concat 合并；
+- `pdb_blocks` 为新增字段，仅供导出器使用；旧字段（`pdb_info` 等）仍保留；
+- 前端下载优先 zip，其次单个注释 CIF。
+
+---
+
+## 变更文件
+
+- `scripts/convert_posts_to_json.py`：多模型抽取；新增 `pdb_blocks`、`pdb_count`；中文注释与“工作流程”说明。
+- `scripts/export_mmcif_with_annotations.py`：
+  - 只注释页面选中模型；
+  - 多模型识别与导出；
+  - 交互输入 & 持久化覆盖；
+  - 合并引擎（pymol/gemmi/concat）；
+  - 索引增强；中文注释与“工作流程”说明。
+

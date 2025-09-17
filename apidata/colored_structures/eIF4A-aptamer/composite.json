@@ -1,0 +1,27 @@
+{
+  "slug": "eIF4A-aptamer",
+  "title": "eIF4A aptamer",
+  "components": [
+    {
+      "pdb_id": "1XWP",
+      "chain_map": [
+        [
+          "A",
+          "C"
+        ]
+      ],
+      "chains": []
+    },
+    {
+      "pdb_id": "1XWU",
+      "chain_map": [
+        [
+          "A",
+          "A"
+        ]
+      ],
+      "chains": []
+    }
+  ],
+  "note": "Composite structure pack; each CIF annotated separately. Use Mol* multi-load if needed."
+}

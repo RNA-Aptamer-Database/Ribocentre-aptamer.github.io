@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-09-07T20:31:00.851641",
+  "generated_at": "2025-09-17T17:41:42.659381",
   "source": "apidata/merged_data_0907.json",
   "total": 50,
   "items": [
@@ -15,6 +15,7 @@
       "annotated_cif_list": [
         "5HTP-aptamer/5KPY.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 14,
       "zip": "5HTP-aptamer/5HTP-aptamer.mmcif.zip"
     },
@@ -30,6 +31,7 @@
       "annotated_cif_list": [
         "AML1(RUNX1)-aptamer/2RRC.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 10,
       "zip": "AML1(RUNX1)-aptamer/AML1(RUNX1)-aptamer.mmcif.zip"
     },
@@ -37,16 +39,17 @@
       "slug": "ATP-aptamer",
       "title": "ATP aptamer",
       "pdb_list": [
-        "6WLJ",
-        "6WLK"
+        "1AM0"
       ],
       "raw_cif_list": [
-        "ATP-aptamer/6WLJ.cif",
-        "ATP-aptamer/6WLK.cif"
+        "ATP-aptamer/1AM0.cif"
       ],
       "annotated_cif_list": [
-        "ATP-aptamer/6WLJ.annotated.cif",
-        "ATP-aptamer/6WLK.annotated.cif"
+        "ATP-aptamer/1AM0.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "ATP-aptamer/related/6WLJ.cif",
+        "ATP-aptamer/related/6WLK.cif"
       ],
       "color_schemes_count": 10,
       "zip": "ATP-aptamer/ATP-aptamer.mmcif.zip"
@@ -63,6 +66,7 @@
       "annotated_cif_list": [
         "Arginine-aptamer/1KOC.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 9,
       "zip": "Arginine-aptamer/Arginine-aptamer.mmcif.zip"
     },
@@ -70,22 +74,18 @@
       "slug": "Beetroot-aptamer",
       "title": "Beetroot aptamer",
       "pdb_list": [
-        "8EYU",
-        "8EYW",
-        "8F0N",
-        "8EYV"
+        "8EYW"
       ],
       "raw_cif_list": [
-        "Beetroot-aptamer/8EYU.cif",
-        "Beetroot-aptamer/8EYW.cif",
-        "Beetroot-aptamer/8F0N.cif",
-        "Beetroot-aptamer/8EYV.cif"
+        "Beetroot-aptamer/8EYW.cif"
       ],
       "annotated_cif_list": [
-        "Beetroot-aptamer/8EYU.annotated.cif",
-        "Beetroot-aptamer/8EYW.annotated.cif",
-        "Beetroot-aptamer/8F0N.annotated.cif",
-        "Beetroot-aptamer/8EYV.annotated.cif"
+        "Beetroot-aptamer/8EYW.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "Beetroot-aptamer/related/8EYU.cif",
+        "Beetroot-aptamer/related/8F0N.cif",
+        "Beetroot-aptamer/related/8EYV.cif"
       ],
       "color_schemes_count": 21,
       "zip": "Beetroot-aptamer/Beetroot-aptamer.mmcif.zip"
@@ -102,6 +102,7 @@
       "annotated_cif_list": [
         "Biotin-aptamer/1F27.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 8,
       "zip": "Biotin-aptamer/Biotin-aptamer.mmcif.zip"
     },
@@ -109,22 +110,18 @@
       "slug": "Bovine-prion-protein-aptamer",
       "title": "Bovine prion protein aptamer",
       "pdb_list": [
-        "2RQJ",
-        "2RSK",
-        "2RU7",
-        "6K84"
+        "2RU7"
       ],
       "raw_cif_list": [
-        "Bovine-prion-protein-aptamer/2RQJ.cif",
-        "Bovine-prion-protein-aptamer/2RSK.cif",
-        "Bovine-prion-protein-aptamer/2RU7.cif",
-        "Bovine-prion-protein-aptamer/6K84.cif"
+        "Bovine-prion-protein-aptamer/2RU7.cif"
       ],
       "annotated_cif_list": [
-        "Bovine-prion-protein-aptamer/2RQJ.annotated.cif",
-        "Bovine-prion-protein-aptamer/2RSK.annotated.cif",
-        "Bovine-prion-protein-aptamer/2RU7.annotated.cif",
-        "Bovine-prion-protein-aptamer/6K84.annotated.cif"
+        "Bovine-prion-protein-aptamer/2RU7.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "Bovine-prion-protein-aptamer/related/2RQJ.cif",
+        "Bovine-prion-protein-aptamer/related/2RSK.cif",
+        "Bovine-prion-protein-aptamer/related/6K84.cif"
       ],
       "color_schemes_count": 8,
       "zip": "Bovine-prion-protein-aptamer/Bovine-prion-protein-aptamer.mmcif.zip"
@@ -141,6 +138,7 @@
       "annotated_cif_list": [
         "Broccoli-aptamer/8K7W.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 21,
       "zip": "Broccoli-aptamer/Broccoli-aptamer.mmcif.zip"
     },
@@ -148,22 +146,18 @@
       "slug": "Chili-aptamer",
       "title": "Chili aptamer",
       "pdb_list": [
-        "7OAW",
-        "7OA3",
-        "7OAV",
-        "7OVX"
+        "7OAW"
       ],
       "raw_cif_list": [
-        "Chili-aptamer/7OAW.cif",
-        "Chili-aptamer/7OA3.cif",
-        "Chili-aptamer/7OAV.cif",
-        "Chili-aptamer/7OVX.cif"
+        "Chili-aptamer/7OAW.cif"
       ],
       "annotated_cif_list": [
-        "Chili-aptamer/7OAW.annotated.cif",
-        "Chili-aptamer/7OA3.annotated.cif",
-        "Chili-aptamer/7OAV.annotated.cif",
-        "Chili-aptamer/7OVX.annotated.cif"
+        "Chili-aptamer/7OAW.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "Chili-aptamer/related/7OA3.cif",
+        "Chili-aptamer/related/7OAV.cif",
+        "Chili-aptamer/related/7OVX.cif"
       ],
       "color_schemes_count": 19,
       "zip": "Chili-aptamer/Chili-aptamer.mmcif.zip"
@@ -180,6 +174,7 @@
       "annotated_cif_list": [
         "Citrulline-aptamer/1KOD.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 9,
       "zip": "Citrulline-aptamer/Citrulline-aptamer.mmcif.zip"
     },
@@ -195,6 +190,7 @@
       "annotated_cif_list": [
         "Clivias-aptamer/8HZE.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 9,
       "zip": "Clivias-aptamer/Clivias-aptamer.mmcif.zip"
     },
@@ -202,28 +198,20 @@
       "slug": "Corn-aptamer",
       "title": "Corn aptamer",
       "pdb_list": [
-        "5BJP",
-        "5BJO",
-        "6E81",
-        "6E82",
-        "6E84",
-        "6E80"
+        "5BJP"
       ],
       "raw_cif_list": [
-        "Corn-aptamer/5BJP.cif",
-        "Corn-aptamer/5BJO.cif",
-        "Corn-aptamer/6E81.cif",
-        "Corn-aptamer/6E82.cif",
-        "Corn-aptamer/6E84.cif",
-        "Corn-aptamer/6E80.cif"
+        "Corn-aptamer/5BJP.cif"
       ],
       "annotated_cif_list": [
-        "Corn-aptamer/5BJP.annotated.cif",
-        "Corn-aptamer/5BJO.annotated.cif",
-        "Corn-aptamer/6E81.annotated.cif",
-        "Corn-aptamer/6E82.annotated.cif",
-        "Corn-aptamer/6E84.annotated.cif",
-        "Corn-aptamer/6E80.annotated.cif"
+        "Corn-aptamer/5BJP.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "Corn-aptamer/related/5BJO.cif",
+        "Corn-aptamer/related/6E81.cif",
+        "Corn-aptamer/related/6E82.cif",
+        "Corn-aptamer/related/6E84.cif",
+        "Corn-aptamer/related/6E80.cif"
       ],
       "color_schemes_count": 62,
       "zip": "Corn-aptamer/Corn-aptamer.mmcif.zip"
@@ -232,16 +220,16 @@
       "slug": "DIR2s-apt-aptamer",
       "title": "DIR2s-apt aptamer",
       "pdb_list": [
-        "6DB9",
         "6DB8"
       ],
       "raw_cif_list": [
-        "DIR2s-apt-aptamer/6DB9.cif",
         "DIR2s-apt-aptamer/6DB8.cif"
       ],
       "annotated_cif_list": [
-        "DIR2s-apt-aptamer/6DB9.annotated.cif",
         "DIR2s-apt-aptamer/6DB8.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "DIR2s-apt-aptamer/related/6DB9.cif"
       ],
       "color_schemes_count": 11,
       "zip": "DIR2s-apt-aptamer/DIR2s-apt-aptamer.mmcif.zip"
@@ -258,6 +246,7 @@
       "annotated_cif_list": [
         "FAD-aptamer/7RWR.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 7,
       "zip": "FAD-aptamer/FAD-aptamer.mmcif.zip"
     },
@@ -273,6 +262,7 @@
       "annotated_cif_list": [
         "FMN-aptamer/1FMN.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 10,
       "zip": "FMN-aptamer/FMN-aptamer.mmcif.zip"
     },
@@ -280,16 +270,16 @@
       "slug": "Factor-Xa-aptamer",
       "title": "Factor Xa aptamer",
       "pdb_list": [
-        "5VOE",
         "5VOF"
       ],
       "raw_cif_list": [
-        "Factor-Xa-aptamer/5VOE.cif",
         "Factor-Xa-aptamer/5VOF.cif"
       ],
       "annotated_cif_list": [
-        "Factor-Xa-aptamer/5VOE.annotated.cif",
         "Factor-Xa-aptamer/5VOF.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "Factor-Xa-aptamer/related/5VOE.cif"
       ],
       "color_schemes_count": 14,
       "zip": "Factor-Xa-aptamer/Factor-Xa-aptamer.mmcif.zip"
@@ -298,16 +288,16 @@
       "slug": "GRK2-aptamer",
       "title": "GRK2 aptamer",
       "pdb_list": [
-        "3UZT",
         "3UZS"
       ],
       "raw_cif_list": [
-        "GRK2-aptamer/3UZT.cif",
         "GRK2-aptamer/3UZS.cif"
       ],
       "annotated_cif_list": [
-        "GRK2-aptamer/3UZT.annotated.cif",
         "GRK2-aptamer/3UZS.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "GRK2-aptamer/related/3UZT.cif"
       ],
       "color_schemes_count": 9,
       "zip": "GRK2-aptamer/GRK2-aptamer.mmcif.zip"
@@ -316,16 +306,16 @@
       "slug": "GTP-aptamer",
       "title": "GTP aptamer",
       "pdb_list": [
-        "5LWJ",
         "2AU4"
       ],
       "raw_cif_list": [
-        "GTP-aptamer/5LWJ.cif",
         "GTP-aptamer/2AU4.cif"
       ],
       "annotated_cif_list": [
-        "GTP-aptamer/5LWJ.annotated.cif",
         "GTP-aptamer/2AU4.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "GTP-aptamer/related/5LWJ.cif"
       ],
       "color_schemes_count": 8,
       "zip": "GTP-aptamer/GTP-aptamer.mmcif.zip"
@@ -342,6 +332,7 @@
       "annotated_cif_list": [
         "GlnRs-aptamer/1EXD.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 10,
       "zip": "GlnRs-aptamer/GlnRs-aptamer.mmcif.zip"
     },
@@ -349,16 +340,16 @@
       "slug": "HIV-1-REV-peptide-aptamer",
       "title": "HIV-1 REV peptide aptamer",
       "pdb_list": [
-        "1ULL",
-        "484D"
+        "1ULL"
       ],
       "raw_cif_list": [
-        "HIV-1-REV-peptide-aptamer/1ULL.cif",
-        "HIV-1-REV-peptide-aptamer/484D.cif"
+        "HIV-1-REV-peptide-aptamer/1ULL.cif"
       ],
       "annotated_cif_list": [
-        "HIV-1-REV-peptide-aptamer/1ULL.annotated.cif",
-        "HIV-1-REV-peptide-aptamer/484D.annotated.cif"
+        "HIV-1-REV-peptide-aptamer/1ULL.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "HIV-1-REV-peptide-aptamer/related/484D.cif"
       ],
       "color_schemes_count": 14,
       "zip": "HIV-1-REV-peptide-aptamer/HIV-1-REV-peptide-aptamer.mmcif.zip"
@@ -375,6 +366,7 @@
       "annotated_cif_list": [
         "HIV-1-Rev-aptamer/6CF2.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 13,
       "zip": "HIV-1-Rev-aptamer/HIV-1-Rev-aptamer.mmcif.zip"
     },
@@ -382,13 +374,16 @@
       "slug": "HIV-1-TAR-RNA-aptamer",
       "title": "HIV-1 TAR RNA aptamer",
       "pdb_list": [
-        "2JLT"
+        "2OOM"
       ],
       "raw_cif_list": [
-        "HIV-1-TAR-RNA-aptamer/2JLT.cif"
+        "HIV-1-TAR-RNA-aptamer/2OOM.cif"
       ],
       "annotated_cif_list": [
-        "HIV-1-TAR-RNA-aptamer/2JLT.annotated.cif"
+        "HIV-1-TAR-RNA-aptamer/2OOM.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "HIV-1-TAR-RNA-aptamer/related/2JLT.cif"
       ],
       "color_schemes_count": 6,
       "zip": "HIV-1-TAR-RNA-aptamer/HIV-1-TAR-RNA-aptamer.mmcif.zip"
@@ -405,6 +400,7 @@
       "annotated_cif_list": [
         "HIV-1-Tat-protein-aptamer/1NBK.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 12,
       "zip": "HIV-1-Tat-protein-aptamer/HIV-1-Tat-protein-aptamer.mmcif.zip"
     },
@@ -420,6 +416,7 @@
       "annotated_cif_list": [
         "HTLV-1-Rex-peptide-aptamer/1EXY.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 8,
       "zip": "HTLV-1-Rex-peptide-aptamer/HTLV-1-Rex-peptide-aptamer.mmcif.zip"
     },
@@ -427,16 +424,16 @@
       "slug": "Hfq-aptamer",
       "title": "Hfq aptamer",
       "pdb_list": [
-        "3HSB",
-        "3AHU"
+        "3HSB"
       ],
       "raw_cif_list": [
-        "Hfq-aptamer/3HSB.cif",
-        "Hfq-aptamer/3AHU.cif"
+        "Hfq-aptamer/3HSB.cif"
       ],
       "annotated_cif_list": [
-        "Hfq-aptamer/3HSB.annotated.cif",
-        "Hfq-aptamer/3AHU.annotated.cif"
+        "Hfq-aptamer/3HSB.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "Hfq-aptamer/related/3AHU.cif"
       ],
       "color_schemes_count": 9,
       "zip": "Hfq-aptamer/Hfq-aptamer.mmcif.zip"
@@ -453,6 +450,7 @@
       "annotated_cif_list": [
         "IgG-aptamer/3AGV.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 21,
       "zip": "IgG-aptamer/IgG-aptamer.mmcif.zip"
     },
@@ -468,6 +466,7 @@
       "annotated_cif_list": [
         "L-CCL2-aptamer/4R8I.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 21,
       "zip": "L-CCL2-aptamer/L-CCL2-aptamer.mmcif.zip"
     },
@@ -475,16 +474,16 @@
       "slug": "Lysozyme-aptamer",
       "title": "Lysozyme aptamer",
       "pdb_list": [
-        "4M6D",
-        "4M4O"
+        "4M6D"
       ],
       "raw_cif_list": [
-        "Lysozyme-aptamer/4M6D.cif",
-        "Lysozyme-aptamer/4M4O.cif"
+        "Lysozyme-aptamer/4M6D.cif"
       ],
       "annotated_cif_list": [
-        "Lysozyme-aptamer/4M6D.annotated.cif",
-        "Lysozyme-aptamer/4M4O.annotated.cif"
+        "Lysozyme-aptamer/4M6D.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "Lysozyme-aptamer/related/4M4O.cif"
       ],
       "color_schemes_count": 11,
       "zip": "Lysozyme-aptamer/Lysozyme-aptamer.mmcif.zip"
@@ -501,6 +500,7 @@
       "annotated_cif_list": [
         "MG-aptamer/1F1T.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 11,
       "zip": "MG-aptamer/MG-aptamer.mmcif.zip"
     },
@@ -508,28 +508,20 @@
       "slug": "Mango-III-aptamer(YO3)",
       "title": "Mango-III-aptamer(YO3)",
       "pdb_list": [
-        "6E8S",
-        "6E8T",
-        "6E8U",
-        "6QP7",
-        "6UP0",
-        "7LZ0"
+        "6UP0"
       ],
       "raw_cif_list": [
-        "Mango-III-aptamer(YO3)/6E8S.cif",
-        "Mango-III-aptamer(YO3)/6E8T.cif",
-        "Mango-III-aptamer(YO3)/6E8U.cif",
-        "Mango-III-aptamer(YO3)/6QP7.cif",
-        "Mango-III-aptamer(YO3)/6UP0.cif",
-        "Mango-III-aptamer(YO3)/7LZ0.cif"
+        "Mango-III-aptamer(YO3)/6UP0.cif"
       ],
       "annotated_cif_list": [
-        "Mango-III-aptamer(YO3)/6E8S.annotated.cif",
-        "Mango-III-aptamer(YO3)/6E8T.annotated.cif",
-        "Mango-III-aptamer(YO3)/6E8U.annotated.cif",
-        "Mango-III-aptamer(YO3)/6QP7.annotated.cif",
-        "Mango-III-aptamer(YO3)/6UP0.annotated.cif",
-        "Mango-III-aptamer(YO3)/7LZ0.annotated.cif"
+        "Mango-III-aptamer(YO3)/6UP0.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "Mango-III-aptamer(YO3)/related/6E8S.cif",
+        "Mango-III-aptamer(YO3)/related/6E8T.cif",
+        "Mango-III-aptamer(YO3)/related/6E8U.cif",
+        "Mango-III-aptamer(YO3)/related/6QP7.cif",
+        "Mango-III-aptamer(YO3)/related/7LZ0.cif"
       ],
       "color_schemes_count": 17,
       "zip": "Mango-III-aptamer(YO3)/Mango-III-aptamer(YO3).mmcif.zip"
@@ -538,28 +530,20 @@
       "slug": "Mango-aptamer(TO1-biotin)",
       "title": "Mango aptamer(TO1-biotin)",
       "pdb_list": [
-        "5V3F",
-        "6C63",
-        "6C64",
-        "6C65",
-        "6V9B",
-        "6V9D"
+        "5V3F"
       ],
       "raw_cif_list": [
-        "Mango-aptamer(TO1-biotin)/5V3F.cif",
-        "Mango-aptamer(TO1-biotin)/6C63.cif",
-        "Mango-aptamer(TO1-biotin)/6C64.cif",
-        "Mango-aptamer(TO1-biotin)/6C65.cif",
-        "Mango-aptamer(TO1-biotin)/6V9B.cif",
-        "Mango-aptamer(TO1-biotin)/6V9D.cif"
+        "Mango-aptamer(TO1-biotin)/5V3F.cif"
       ],
       "annotated_cif_list": [
-        "Mango-aptamer(TO1-biotin)/5V3F.annotated.cif",
-        "Mango-aptamer(TO1-biotin)/6C63.annotated.cif",
-        "Mango-aptamer(TO1-biotin)/6C64.annotated.cif",
-        "Mango-aptamer(TO1-biotin)/6C65.annotated.cif",
-        "Mango-aptamer(TO1-biotin)/6V9B.annotated.cif",
-        "Mango-aptamer(TO1-biotin)/6V9D.annotated.cif"
+        "Mango-aptamer(TO1-biotin)/5V3F.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "Mango-aptamer(TO1-biotin)/related/6C63.cif",
+        "Mango-aptamer(TO1-biotin)/related/6C64.cif",
+        "Mango-aptamer(TO1-biotin)/related/6C65.cif",
+        "Mango-aptamer(TO1-biotin)/related/6V9B.cif",
+        "Mango-aptamer(TO1-biotin)/related/6V9D.cif"
       ],
       "color_schemes_count": 20,
       "zip": "Mango-aptamer(TO1-biotin)/Mango-aptamer(TO1-biotin).mmcif.zip"
@@ -576,6 +560,7 @@
       "annotated_cif_list": [
         "NF-kappaB-aptamer/1OOA.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 7,
       "zip": "NF-kappaB-aptamer/NF-kappaB-aptamer.mmcif.zip"
     },
@@ -591,6 +576,7 @@
       "annotated_cif_list": [
         "NeomycinB-aptamer/1NEM.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 14,
       "zip": "NeomycinB-aptamer/NeomycinB-aptamer.mmcif.zip"
     },
@@ -606,6 +592,7 @@
       "annotated_cif_list": [
         "PSMA-aptamer/6RTI.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 16,
       "zip": "PSMA-aptamer/PSMA-aptamer.mmcif.zip"
     },
@@ -613,46 +600,26 @@
       "slug": "Pepper-aptamer",
       "title": "Pepper aptamer",
       "pdb_list": [
-        "7EOH",
-        "7EOG",
-        "7EOI",
-        "7EOJ",
-        "7EOK",
-        "7EOL",
-        "7EOM",
-        "7EON",
-        "7EOO",
-        "7EOP",
-        "7U0Y",
-        "7SZU"
+        "7EOH"
       ],
       "raw_cif_list": [
-        "Pepper-aptamer/7EOH.cif",
-        "Pepper-aptamer/7EOG.cif",
-        "Pepper-aptamer/7EOI.cif",
-        "Pepper-aptamer/7EOJ.cif",
-        "Pepper-aptamer/7EOK.cif",
-        "Pepper-aptamer/7EOL.cif",
-        "Pepper-aptamer/7EOM.cif",
-        "Pepper-aptamer/7EON.cif",
-        "Pepper-aptamer/7EOO.cif",
-        "Pepper-aptamer/7EOP.cif",
-        "Pepper-aptamer/7U0Y.cif",
-        "Pepper-aptamer/7SZU.cif"
+        "Pepper-aptamer/7EOH.cif"
       ],
       "annotated_cif_list": [
-        "Pepper-aptamer/7EOH.annotated.cif",
-        "Pepper-aptamer/7EOG.annotated.cif",
-        "Pepper-aptamer/7EOI.annotated.cif",
-        "Pepper-aptamer/7EOJ.annotated.cif",
-        "Pepper-aptamer/7EOK.annotated.cif",
-        "Pepper-aptamer/7EOL.annotated.cif",
-        "Pepper-aptamer/7EOM.annotated.cif",
-        "Pepper-aptamer/7EON.annotated.cif",
-        "Pepper-aptamer/7EOO.annotated.cif",
-        "Pepper-aptamer/7EOP.annotated.cif",
-        "Pepper-aptamer/7U0Y.annotated.cif",
-        "Pepper-aptamer/7SZU.annotated.cif"
+        "Pepper-aptamer/7EOH.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "Pepper-aptamer/related/7EOG.cif",
+        "Pepper-aptamer/related/7EOI.cif",
+        "Pepper-aptamer/related/7EOJ.cif",
+        "Pepper-aptamer/related/7EOK.cif",
+        "Pepper-aptamer/related/7EOL.cif",
+        "Pepper-aptamer/related/7EOM.cif",
+        "Pepper-aptamer/related/7EON.cif",
+        "Pepper-aptamer/related/7EOO.cif",
+        "Pepper-aptamer/related/7EOP.cif",
+        "Pepper-aptamer/related/7U0Y.cif",
+        "Pepper-aptamer/related/7SZU.cif"
       ],
       "color_schemes_count": 10,
       "zip": "Pepper-aptamer/Pepper-aptamer.mmcif.zip"
@@ -669,6 +636,7 @@
       "annotated_cif_list": [
         "RNA-polymerase-(Pol)-II_FC-RNA-aptamer/2B63.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 18,
       "zip": "RNA-polymerase-(Pol)-II_FC-RNA-aptamer/RNA-polymerase-(Pol)-II_FC-RNA-aptamer.mmcif.zip"
     },
@@ -684,6 +652,7 @@
       "annotated_cif_list": [
         "RhoBAST-aptamer/8JY0.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 16,
       "zip": "RhoBAST-aptamer/RhoBAST-aptamer.mmcif.zip"
     },
@@ -699,6 +668,7 @@
       "annotated_cif_list": [
         "Ribosomal-protein-S8-aptamer/4PDB.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 10,
       "zip": "Ribosomal-protein-S8-aptamer/Ribosomal-protein-S8-aptamer.mmcif.zip"
     },
@@ -714,6 +684,7 @@
       "annotated_cif_list": [
         "Ribostamycin-aptamer/2N0J.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 8,
       "zip": "Ribostamycin-aptamer/Ribostamycin-aptamer.mmcif.zip"
     },
@@ -721,16 +692,17 @@
       "slug": "Spinach-aptamer",
       "title": "Spinach aptamer",
       "pdb_list": [
-        "6B14",
-        "6B3K"
+        "4TS0"
       ],
       "raw_cif_list": [
-        "Spinach-aptamer/6B14.cif",
-        "Spinach-aptamer/6B3K.cif"
+        "Spinach-aptamer/4TS0.cif"
       ],
       "annotated_cif_list": [
-        "Spinach-aptamer/6B14.annotated.cif",
-        "Spinach-aptamer/6B3K.annotated.cif"
+        "Spinach-aptamer/4TS0.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "Spinach-aptamer/related/6B14.cif",
+        "Spinach-aptamer/related/6B3K.cif"
       ],
       "color_schemes_count": 23,
       "zip": "Spinach-aptamer/Spinach-aptamer.mmcif.zip"
@@ -739,19 +711,17 @@
       "slug": "Squash-aptamer",
       "title": "Squash aptamer",
       "pdb_list": [
-        "7KVT",
-        "7KVU",
-        "7KVV"
+        "7KVU"
       ],
       "raw_cif_list": [
-        "Squash-aptamer/7KVT.cif",
-        "Squash-aptamer/7KVU.cif",
-        "Squash-aptamer/7KVV.cif"
+        "Squash-aptamer/7KVU.cif"
       ],
       "annotated_cif_list": [
-        "Squash-aptamer/7KVT.annotated.cif",
-        "Squash-aptamer/7KVU.annotated.cif",
-        "Squash-aptamer/7KVV.annotated.cif"
+        "Squash-aptamer/7KVU.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "Squash-aptamer/related/7KVT.cif",
+        "Squash-aptamer/related/7KVV.cif"
       ],
       "color_schemes_count": 10,
       "zip": "Squash-aptamer/Squash-aptamer.mmcif.zip"
@@ -760,16 +730,16 @@
       "slug": "Streptomycin-aptamer",
       "title": "Streptomycin aptamer",
       "pdb_list": [
-        "1NTA",
-        "1NTB"
+        "1NTA"
       ],
       "raw_cif_list": [
-        "Streptomycin-aptamer/1NTA.cif",
-        "Streptomycin-aptamer/1NTB.cif"
+        "Streptomycin-aptamer/1NTA.cif"
       ],
       "annotated_cif_list": [
-        "Streptomycin-aptamer/1NTA.annotated.cif",
-        "Streptomycin-aptamer/1NTB.annotated.cif"
+        "Streptomycin-aptamer/1NTA.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "Streptomycin-aptamer/related/1NTB.cif"
       ],
       "color_schemes_count": 15,
       "zip": "Streptomycin-aptamer/Streptomycin-aptamer.mmcif.zip"
@@ -778,16 +748,16 @@
       "slug": "TMR-aptamer",
       "title": "TMR aptamer",
       "pdb_list": [
-        "6GZR",
         "6GZK"
       ],
       "raw_cif_list": [
-        "TMR-aptamer/6GZR.cif",
         "TMR-aptamer/6GZK.cif"
       ],
       "annotated_cif_list": [
-        "TMR-aptamer/6GZR.annotated.cif",
         "TMR-aptamer/6GZK.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "TMR-aptamer/related/6GZR.cif"
       ],
       "color_schemes_count": 7,
       "zip": "TMR-aptamer/TMR-aptamer.mmcif.zip"
@@ -796,16 +766,16 @@
       "slug": "TetR-aptamer",
       "title": "TetR aptamer",
       "pdb_list": [
-        "6SY4",
-        "6SY6"
+        "6SY4"
       ],
       "raw_cif_list": [
-        "TetR-aptamer/6SY4.cif",
-        "TetR-aptamer/6SY6.cif"
+        "TetR-aptamer/6SY4.cif"
       ],
       "annotated_cif_list": [
-        "TetR-aptamer/6SY4.annotated.cif",
-        "TetR-aptamer/6SY6.annotated.cif"
+        "TetR-aptamer/6SY4.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "TetR-aptamer/related/6SY6.cif"
       ],
       "color_schemes_count": 13,
       "zip": "TetR-aptamer/TetR-aptamer.mmcif.zip"
@@ -822,6 +792,7 @@
       "annotated_cif_list": [
         "Tetracycline-aptamer/3EGZ.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 12,
       "zip": "Tetracycline-aptamer/Tetracycline-aptamer.mmcif.zip"
     },
@@ -837,6 +808,7 @@
       "annotated_cif_list": [
         "Thrombin-aptamer/3DD2.annotated.cif"
       ],
+      "related_raw_cif_list": [],
       "color_schemes_count": 19,
       "zip": "Thrombin-aptamer/Thrombin-aptamer.mmcif.zip"
     },
@@ -844,16 +816,16 @@
       "slug": "Tobramycin-aptamer",
       "title": "Tobramycin aptamer",
       "pdb_list": [
-        "1TOB",
-        "2TOB"
+        "1TOB"
       ],
       "raw_cif_list": [
-        "Tobramycin-aptamer/1TOB.cif",
-        "Tobramycin-aptamer/2TOB.cif"
+        "Tobramycin-aptamer/1TOB.cif"
       ],
       "annotated_cif_list": [
-        "Tobramycin-aptamer/1TOB.annotated.cif",
-        "Tobramycin-aptamer/2TOB.annotated.cif"
+        "Tobramycin-aptamer/1TOB.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "Tobramycin-aptamer/related/2TOB.cif"
       ],
       "color_schemes_count": 0,
       "zip": "Tobramycin-aptamer/Tobramycin-aptamer.mmcif.zip"
@@ -862,16 +834,16 @@
       "slug": "Vitamin-B12-aptamer",
       "title": "Vitamin B12 aptamer",
       "pdb_list": [
-        "1ET4",
-        "1DDY"
+        "1ET4"
       ],
       "raw_cif_list": [
-        "Vitamin-B12-aptamer/1ET4.cif",
-        "Vitamin-B12-aptamer/1DDY.cif"
+        "Vitamin-B12-aptamer/1ET4.cif"
       ],
       "annotated_cif_list": [
-        "Vitamin-B12-aptamer/1ET4.annotated.cif",
-        "Vitamin-B12-aptamer/1DDY.annotated.cif"
+        "Vitamin-B12-aptamer/1ET4.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "Vitamin-B12-aptamer/related/1DDY.cif"
       ],
       "color_schemes_count": 12,
       "zip": "Vitamin-B12-aptamer/Vitamin-B12-aptamer.mmcif.zip"
@@ -880,22 +852,18 @@
       "slug": "bacteriophage-MS2-coat-protein-aptamer",
       "title": "Bacteriophage MS2 coat protein aptamer",
       "pdb_list": [
-        "6MSF",
-        "5MSF",
-        "7MSF",
-        "1U1Y"
+        "6MSF"
       ],
       "raw_cif_list": [
-        "bacteriophage-MS2-coat-protein-aptamer/6MSF.cif",
-        "bacteriophage-MS2-coat-protein-aptamer/5MSF.cif",
-        "bacteriophage-MS2-coat-protein-aptamer/7MSF.cif",
-        "bacteriophage-MS2-coat-protein-aptamer/1U1Y.cif"
+        "bacteriophage-MS2-coat-protein-aptamer/6MSF.cif"
       ],
       "annotated_cif_list": [
-        "bacteriophage-MS2-coat-protein-aptamer/6MSF.annotated.cif",
-        "bacteriophage-MS2-coat-protein-aptamer/5MSF.annotated.cif",
-        "bacteriophage-MS2-coat-protein-aptamer/7MSF.annotated.cif",
-        "bacteriophage-MS2-coat-protein-aptamer/1U1Y.annotated.cif"
+        "bacteriophage-MS2-coat-protein-aptamer/6MSF.annotated.cif"
+      ],
+      "related_raw_cif_list": [
+        "bacteriophage-MS2-coat-protein-aptamer/related/5MSF.cif",
+        "bacteriophage-MS2-coat-protein-aptamer/related/7MSF.cif",
+        "bacteriophage-MS2-coat-protein-aptamer/related/1U1Y.cif"
       ],
       "color_schemes_count": 4,
       "zip": "bacteriophage-MS2-coat-protein-aptamer/bacteriophage-MS2-coat-protein-aptamer.mmcif.zip"
@@ -914,6 +882,30 @@
       "annotated_cif_list": [
         "eIF4A-aptamer/1XWP.annotated.cif",
         "eIF4A-aptamer/1XWU.annotated.cif"
+      ],
+      "related_raw_cif_list": [],
+      "composite": true,
+      "components": [
+        {
+          "pdb_id": "1XWP",
+          "chain_map": [
+            [
+              "A",
+              "C"
+            ]
+          ],
+          "chains": []
+        },
+        {
+          "pdb_id": "1XWU",
+          "chain_map": [
+            [
+              "A",
+              "A"
+            ]
+          ],
+          "chains": []
+        }
       ],
       "color_schemes_count": 11,
       "zip": "eIF4A-aptamer/eIF4A-aptamer.mmcif.zip"

@@ -1,12 +1,26 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Posts to JSON Converter
-将 _posts 目录下的 Markdown 文件转换为结构化的 JSON 数据
-使用方法:
-  python convert_posts_to_json.py --input _posts --output apidata/posts_data.json
-  python convert_posts_to_json.py --input _posts --output apidata/posts_data.json --validate
-  python convert_posts_to_json.py --input _posts --output apidata/posts_data.json --single "ATP-aptamer.md"
+帖子转 JSON 转换器（增强版，多模型支持）
+
+功能：
+- 将 `_posts/` 下的 Markdown 页面解析为结构化 JSON（`apidata/posts_data.json`）。
+- 在“Structure/3D visualisation(visualization)”子节中，除保留第一套 viewer 配置外，额外收集该小节内出现的全部模型与配色，写入 `pdb_blocks`（数组）并统计 `pdb_count`，用于导出器自动识别“页面准备了多个结构”。
+
+工作流程：
+1) 解析 Front Matter 与页面分节（header_box）。
+2) 对每个分节：提取文本、图片、表格、序列；
+3) 对 Structure 子节：
+   - 定位子小节（blowheader_box），找到 3D 可视化内容；
+   - 抽取首个 `pdb_info.pdb_file_path`（兼容字段，历史沿用）；
+   - 同时扫描该小节内所有 `url:'...(.pdb|.cif)'` 与所有 `var selectSectionsN=[...]` 配色块，按出现顺序配对，生成 `pdb_blocks`；
+   - 统计 `pdb_count` 并保留首个 `color_schemes` 作为兼容字段。
+4) 汇总并写入 `apidata/posts_data.json`。
+
+用法:
+  python scripts/convert_posts_to_json.py --input _posts --output apidata/posts_data.json
+  python scripts/convert_posts_to_json.py --input _posts --output apidata/posts_data.json --validate
+  python scripts/convert_posts_to_json.py --input _posts --output apidata/posts_data.json --single "ATP-aptamer.md"
 """
 import re
 import json
@@ -213,7 +227,12 @@ class PostsToJsonConverter:
         
         return timeline
     def extract_3d_structure_info(self, content: str) -> Dict[str, Any]:
-        """提取3D结构相关信息"""
+        """提取 3D 结构相关信息（支持同一小节多个模型/viewer）。
+
+        输出结构包含：
+        - 兼容字段：`pdb_info`（首个）、`color_schemes`（首个）、`molstar_config`；
+        - 增强字段：`pdb_blocks`（[{pdb_info, color_schemes, molstar_config}...]）与 `pdb_count`。
+        """
         structure_info = {
             'pdb_info': {},
             'molstar_config': {},
@@ -250,6 +269,26 @@ class PostsToJsonConverter:
             molstar_options['hidden_controls'] = controls
         
         structure_info['molstar_config'] = molstar_options
+
+        # 额外：收集同一小节里出现的所有模型与配色，供后续导出器使用
+        file_iter_pattern = re.compile(r"url:\s*['\"]([^'\"]*\.(?:pdb|cif))(?:\s*\?.*?)?['\"]", re.IGNORECASE)
+        all_files = [m.group(1) for m in file_iter_pattern.finditer(content)]
+        color_selection_iter = re.compile(r'var\s+selectSections\d+\s*=\s*\[(.*?)\]', re.DOTALL | re.IGNORECASE)
+        all_color_text = [m.group(1) for m in color_selection_iter.finditer(content)]
+        all_color_sets = [self._parse_color_rules(txt) for txt in all_color_text]
+        blocks: List[Dict[str, Any]] = []
+        n = max(len(all_files), len(all_color_sets))
+        for i in range(n):
+            block_info = {
+                'pdb_info': {},
+                'molstar_config': molstar_options,
+                'color_schemes': all_color_sets[i] if i < len(all_color_sets) else []
+            }
+            if i < len(all_files):
+                block_info['pdb_info']['pdb_file_path'] = all_files[i]
+            blocks.append(block_info)
+        structure_info['pdb_blocks'] = blocks
+        structure_info['pdb_count'] = len(blocks)
         
         # 提取颜色选择规则
         color_selection_pattern = re.compile(r'var\s+selectSections\d+\s*=\s*\[(.*?)\]', re.DOTALL | re.IGNORECASE)
