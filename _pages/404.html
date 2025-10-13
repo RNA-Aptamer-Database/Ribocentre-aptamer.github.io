@@ -385,6 +385,7 @@ class RNAMatch3Game {
         this.animating = false;
         this.comboCount = 0;
         this.particles = [];
+        this.levelFinished = false;
         
         // RNA nucleotide types and colors
         this.nucleotides = ['A', 'U', 'C', 'G'];
@@ -452,7 +453,7 @@ class RNAMatch3Game {
     }
     
     handleClick(e) {
-        if (this.animating || this.moves <= 0) return;
+        if (this.animating || this.moves <= 0 || this.levelFinished) return;
         
         const rect = this.canvas.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -537,8 +538,9 @@ class RNAMatch3Game {
             this.moves--;
             this.comboCount = 0;
             await this.processMatches();
+            await this.waitForBoardToSettle();
         }
-        
+
         this.animating = false;
         this.updateUI();
         this.checkGameState();
@@ -736,7 +738,42 @@ class RNAMatch3Game {
     wait(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
-    
+
+    async waitForBoardToSettle() {
+        const maxChecks = 60;
+        for (let i = 0; i < maxChecks; i++) {
+            let needsMoreTime = false;
+
+            for (let row = 0; row < this.gridSize && !needsMoreTime; row++) {
+                for (let col = 0; col < this.gridSize; col++) {
+                    const cell = this.board[row][col];
+                    if (!cell) {
+                        needsMoreTime = true;
+                        break;
+                    }
+
+                    const dx = Math.abs(cell.x - cell.targetX);
+                    const dy = Math.abs(cell.y - cell.targetY);
+
+                    if (dx > 1 || dy > 1) {
+                        needsMoreTime = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!needsMoreTime) {
+                return;
+            }
+
+            await this.wait(16);
+        }
+
+        // Safety net: ensure no dangling gaps remain after the wait loop
+        this.dropCells();
+        this.fillBoard();
+    }
+
     updateUI() {
         document.getElementById('score').textContent = this.score;
         document.getElementById('level').textContent = this.level;
@@ -745,28 +782,37 @@ class RNAMatch3Game {
     }
     
     checkGameState() {
+        if (this.levelFinished) return;
+
         if (this.score >= this.target) {
             this.levelComplete();
         } else if (this.moves <= 0) {
             this.gameOver();
         }
     }
-    
+
     levelComplete() {
+        this.levelFinished = true;
+        this.animating = true;
+        this.selectedCell = null;
         document.getElementById('finalScore').textContent = this.score;
         document.getElementById('levelComplete').classList.add('show');
     }
-    
+
     nextLevel() {
         this.level++;
         this.target = Math.floor(this.target * 1.5);
         this.moves = 30;
         this.comboCount = 0;
+        this.levelFinished = false;
+        this.animating = false;
+        this.selectedCell = null;
+        this.particles = [];
         this.generateBoard();
         this.updateUI();
         document.getElementById('levelComplete').classList.remove('show');
     }
-    
+
     gameOver() {
         setTimeout(() => {
             if (confirm(`Game over! Your score: ${this.score}. Would you like to restart?`)) {
@@ -783,6 +829,8 @@ class RNAMatch3Game {
         this.comboCount = 0;
         this.selectedCell = null;
         this.particles = [];
+        this.levelFinished = false;
+        this.animating = false;
         this.generateBoard();
         this.updateUI();
     }
