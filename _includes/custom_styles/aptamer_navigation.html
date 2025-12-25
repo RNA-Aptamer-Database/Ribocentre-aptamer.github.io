@@ -254,11 +254,16 @@
         const cell = cells[seqCol];
         const fullSeqRaw = cell.textContent.trim();
         const fullSeq = fullSeqRaw.replace(/\s+/g, '');
-        if (fullSeq.length <= 40) return; // 短序列不用截断
+        const stripTermini = (seq) => seq
+          .replace(/^5['’`´′]-/i, '')
+          .replace(/-3['’`´′]?$/i, '');
 
-        cell.dataset.fullSeq = fullSeq;
+        const coreSeq = stripTermini(fullSeq);
+        if (coreSeq.length <= 40) return; // 短序列不用截断
+
+        cell.dataset.fullSeq = coreSeq;
         cell.dataset.fullSeqRaw = fullSeqRaw;
-        const shortText = fullSeq.slice(0, 20) + '…';
+        const shortText = coreSeq.slice(0, 20) + '…';
         cell.textContent = shortText;
 
         // 可点击提示
@@ -276,7 +281,8 @@
                             'D':'base-U', 'E':'base-U', /* 负电蓝系 */
                             'C':'base-C', 'P':'base-C' };
 
-        const isNuc = /^[AUCGTaucgt\s'-]+$/.test(fullSeqRaw);
+        const coreSeqRaw = stripTermini(fullSeqRaw);
+        const isNuc = /^[AUCGTaucgt\s'-]+$/.test(coreSeqRaw);
         const buildColored = (seq) => {
           let html = '';
           for (const ch of seq) {
@@ -290,7 +296,7 @@
         // 生成着色 HTML 并构建完整tooltip
         const buildTooltip = () => {
           const coloredSeq = buildColored(fullSeqRaw);
-          const seqLen = fullSeq.length;
+          const seqLen = coreSeq.length;
           const seqType = isNuc ? 'nt' : 'aa';
           return `
             <div class='seq-info'>Length: ${seqLen} ${seqType}</div>
@@ -303,7 +309,7 @@
         const showTip = (e) => {
           if (window.showAmirTooltip) {
             // 传递当前cell的序列数据
-            window.showAmirTooltip(tooltipHtml, cell, fullSeq);
+            window.showAmirTooltip(tooltipHtml, cell, coreSeq);
           }
         };
         cell.addEventListener('click', showTip);
