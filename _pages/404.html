@@ -107,65 +107,31 @@ permalink: /404.html
   }
 
   .pip-stage {
-    position: relative;
-    min-height: 295px;
     border-radius: 16px;
     background: linear-gradient(135deg, #eef3ff 0%, #f8fbff 100%);
     border: 1px solid #dbe4fb;
     overflow: hidden;
-    padding: 1rem;
+    padding: 0.8rem;
   }
 
-  .pip-main {
-    width: min(100%, 720px);
-    background: #ffffff;
+  .pip-frame {
+    width: 100%;
+    min-height: 480px;
     border: 1px solid #d9e0f2;
     border-radius: 12px;
-    padding: 1rem;
-    box-shadow: 0 6px 15px rgba(23, 42, 92, 0.12);
+    background: #ffffff;
   }
 
-  .pip-main h3,
-  .pip-card h4 {
-    margin: 0 0 0.35rem;
-    color: #1a2f72;
-  }
-
-  .pip-main p,
-  .pip-card p {
-    margin: 0;
-    color: #3f4c70;
-    line-height: 1.55;
-    font-size: 0.93rem;
-  }
-
-  .pip-main a,
-  .pip-card a {
+  .pip-link {
     display: inline-block;
-    margin-top: 0.45rem;
+    margin-top: 0.7rem;
     color: #1f46b4;
     text-decoration: none;
     font-size: 0.92rem;
     font-weight: 600;
   }
 
-  .pip-main a:hover,
-  .pip-card a:hover { text-decoration: underline; }
-
-  .pip-card {
-    position: absolute;
-    right: 14px;
-    width: min(260px, 68vw);
-    background: #ffffff;
-    border-radius: 12px;
-    border: 1px solid #dce3f6;
-    box-shadow: 0 6px 14px rgba(18, 35, 72, 0.12);
-    padding: 0.8rem;
-  }
-
-  .pip-1 { top: 14px; }
-  .pip-2 { top: 104px; right: 26px; }
-  .pip-3 { top: 194px; right: 38px; }
+  .pip-link:hover { text-decoration: underline; }
 
   .nf-urgent {
     margin-top: 1rem;
@@ -173,18 +139,6 @@ permalink: /404.html
     color: #4b5678;
   }
 
-  @media (max-width: 920px) {
-    .pip-stage {
-      min-height: auto;
-      display: grid;
-      gap: 0.8rem;
-    }
-
-    .pip-card {
-      position: static;
-      width: 100%;
-    }
-  }
 </style>
 
 <div class="nf-wrap">
@@ -204,35 +158,20 @@ permalink: /404.html
     <p class="nf-note">Optional resources are provided below as a secondary panel.</p>
 
     <div class="pip-area">
-      <h2 class="pip-title">Picture-in-Picture Resource Panel (Secondary)</h2>
+      <h2 class="pip-title">Family-Reunion Resource Panel (Secondary)</h2>
       <p class="pip-intro">
-        This area highlights public family-reunion and missing-person resources in mainland China. It is intentionally secondary to the 404 recovery actions above.
+        The embedded frame below shows the Baobeihuijia website directly as a single reference panel.
       </p>
 
       <div class="pip-stage">
-        <article class="pip-main">
-          <h3>Main PiP: Baobeihuijia</h3>
-          <p>Volunteer-supported family-reunion platform with missing-child and reunion-related leads.</p>
-          <a href="https://www.baobeihuijia.com/" target="_blank" rel="noopener noreferrer">Open Baobeihuijia ↗</a>
-        </article>
-
-        <article class="pip-card pip-1">
-          <h4>PiP 01: MPS Tuanyuan</h4>
-          <p>Official public-security system for missing-child alerts and recovery updates.</p>
-          <a href="https://qypt.mps.gov.cn/" target="_blank" rel="noopener noreferrer">Open Tuanyuan ↗</a>
-        </article>
-
-        <article class="pip-card pip-2">
-          <h4>PiP 02: Toutiao Xunren</h4>
-          <p>Internet-based assistance channel for finding missing relatives.</p>
-          <a href="https://xunren.toutiao.com/" target="_blank" rel="noopener noreferrer">Open Xunren ↗</a>
-        </article>
-
-        <article class="pip-card pip-3">
-          <h4>PiP 03: Missing Persons Archive</h4>
-          <p>Public-interest archival platform for missing-person information records.</p>
-          <a href="http://www.zgmqgr.com/" target="_blank" rel="noopener noreferrer">Open Archive ↗</a>
-        </article>
+        <iframe
+          class="pip-frame"
+          src="https://www.baobeihuijia.com/"
+          title="Baobeihuijia"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <a class="pip-link" href="https://www.baobeihuijia.com/" target="_blank" rel="noopener noreferrer">Open Baobeihuijia in a new tab ↗</a>
       </div>
 
       <p class="nf-urgent">Emergency reminder: for urgent missing-person cases, contact local police immediately (110).</p>
