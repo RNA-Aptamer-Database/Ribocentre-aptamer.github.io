@@ -1,241 +1,242 @@
 ---
-title: "页面未找到 - Ribocentre Aptamer"
+
+title: "Page Not Found - Ribocentre Aptamer"
 layout: default
-excerpt: "页面未找到，您也可以关注中国大陆寻亲公益平台。"
+excerpt: "The page does not exist. Use quick navigation or optional family-reunion resources."
+
 sitemap: false
 permalink: /404.html
 ---
 
 <style>
   * { box-sizing: border-box; }
-
-  .not-found-wrapper {
-    max-width: 1080px;
+  .nf-wrap {
+    max-width: 1040px;
     margin: 2rem auto 3rem;
     padding: 0 1rem;
-    font-family: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
   }
 
-  .not-found-hero {
-    background: linear-gradient(135deg, #1b1135 0%, #452173 55%, #5f2f89 100%);
-    color: #fff;
-    border-radius: 24px;
+  .nf-panel {
+    background: linear-gradient(180deg, #f8f9ff 0%, #ffffff 65%);
+    color: #1a1f36;
+    border: 1px solid #dbe2f3;
+    border-radius: 20px;
     padding: 2rem;
-    box-shadow: 0 20px 50px rgba(34, 16, 62, 0.35);
-    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(18, 35, 72, 0.12);
   }
 
-  .not-found-title {
-    margin: 0;
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
+  .nf-badge {
+    display: inline-block;
+    margin-bottom: 0.7rem;
+    background: #1c2f6e;
+    color: #ffffff;
     font-weight: 700;
+    letter-spacing: 0.04em;
+    border-radius: 999px;
+    padding: 0.25rem 0.8rem;
+    font-size: 0.82rem;
   }
 
-  .not-found-subtitle {
-    margin: 0.8rem 0 1.4rem;
+  .nf-title {
+    margin: 0;
+    font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+    color: #0e1c49;
+  }
+
+  .nf-subtitle {
+    margin: 0.9rem 0 1.4rem;
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.92);
-    max-width: 800px;
+    color: #344160;
+    max-width: 760px;
   }
 
-  .nav-actions {
+  .nf-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.4rem;
   }
 
-  .nav-actions a {
-    padding: 0.62rem 1.05rem;
-    border-radius: 999px;
+  .nf-actions a {
     text-decoration: none;
+    padding: 0.62rem 1rem;
+    border-radius: 10px;
     font-weight: 600;
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    color: #fff;
-    background: rgba(255, 255, 255, 0.13);
-    transition: all 0.25s ease;
+    border: 1px solid #c6d0ea;
+    color: #14285d;
+    background: #ffffff;
+    transition: all 0.2s ease;
   }
 
-  .nav-actions a:hover {
-    background: rgba(255, 255, 255, 0.24);
-    transform: translateY(-2px);
+  .nf-actions a:hover {
+    transform: translateY(-1px);
+    border-color: #8ea4dd;
+    box-shadow: 0 7px 14px rgba(30, 56, 112, 0.14);
+  }
+
+  .nf-actions a.primary {
+    background: #203a84;
+    color: #ffffff;
+    border-color: #203a84;
+  }
+
+  .nf-note {
+    margin: 0;
+    color: #4b5678;
+    font-size: 0.94rem;
+  }
+
+  .pip-area {
+    margin-top: 2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid #e3e8f6;
+  }
+
+  .pip-title {
+    margin: 0 0 0.7rem;
+    font-size: 1.05rem;
+    color: #1c2f6e;
+  }
+
+  .pip-intro {
+    margin: 0 0 1rem;
+    color: #485577;
+    font-size: 0.94rem;
+    line-height: 1.6;
   }
 
   .pip-stage {
     position: relative;
-    min-height: 410px;
-  }
-
-  .main-screen {
-    width: min(100%, 880px);
-    background: #0f1629;
-    border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0 16px 35px rgba(8, 10, 26, 0.45);
+    min-height: 295px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #eef3ff 0%, #f8fbff 100%);
+    border: 1px solid #dbe4fb;
     overflow: hidden;
-  }
-
-  .screen-bar {
-    display: flex;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.7rem 0.9rem;
-    background: rgba(255, 255, 255, 0.08);
-  }
-
-  .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-  }
-
-  .dot.red { background: #ff6b6b; }
-  .dot.yellow { background: #ffd166; }
-  .dot.green { background: #1dd1a1; }
-
-  .screen-body {
-    padding: 1.15rem;
-    background: linear-gradient(180deg, #0f172a 0%, #121a2e 100%);
-  }
-
-  .main-card {
-    background: linear-gradient(145deg, #f6f8ff 0%, #ffffff 55%, #eef3ff 100%);
-    color: #1f2a44;
-    border-radius: 14px;
     padding: 1rem;
-    border: 1px solid #dde3f6;
   }
 
-  .main-card h3 {
-    margin: 0 0 0.4rem;
-    color: #4f2f8a;
-    font-size: 1.05rem;
-  }
-
-  .main-card p {
-    margin: 0 0 0.85rem;
-    line-height: 1.6;
-  }
-
-  .main-card a {
-    display: inline-block;
-    color: #4f2f8a;
-    text-decoration: none;
-    font-weight: 700;
-  }
-
-  .main-card a:hover { text-decoration: underline; }
-
-  .pip-small {
-    position: absolute;
-    right: 0;
-    width: min(290px, 75vw);
+  .pip-main {
+    width: min(100%, 720px);
     background: #ffffff;
-    border-radius: 14px;
-    border: 1px solid #e1def3;
-    box-shadow: 0 10px 25px rgba(19, 17, 45, 0.3);
-    padding: 0.85rem 0.9rem;
-    color: #2a2a3a;
+    border: 1px solid #d9e0f2;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 6px 15px rgba(23, 42, 92, 0.12);
   }
 
-  .pip-small h4 {
+  .pip-main h3,
+  .pip-card h4 {
     margin: 0 0 0.35rem;
-    color: #4f2f8a;
-    font-size: 0.98rem;
+    color: #1a2f72;
   }
 
-  .pip-small p {
+  .pip-main p,
+  .pip-card p {
     margin: 0;
+    color: #3f4c70;
     line-height: 1.55;
-    font-size: 0.92rem;
+    font-size: 0.93rem;
   }
 
-  .pip-small a {
+  .pip-main a,
+  .pip-card a {
     display: inline-block;
     margin-top: 0.45rem;
+    color: #1f46b4;
     text-decoration: none;
-    color: #3b2ca6;
+    font-size: 0.92rem;
     font-weight: 600;
   }
 
-  .pip-small a:hover { text-decoration: underline; }
+  .pip-main a:hover,
+  .pip-card a:hover { text-decoration: underline; }
 
-  .pip-a { top: 30px; }
-  .pip-b { top: 170px; right: 30px; }
-  .pip-c { top: 310px; right: 60px; }
-
-  .note {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.9);
+  .pip-card {
+    position: absolute;
+    right: 14px;
+    width: min(260px, 68vw);
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #dce3f6;
+    box-shadow: 0 6px 14px rgba(18, 35, 72, 0.12);
+    padding: 0.8rem;
   }
 
-  @media (max-width: 980px) {
+  .pip-1 { top: 14px; }
+  .pip-2 { top: 104px; right: 26px; }
+  .pip-3 { top: 194px; right: 38px; }
+
+  .nf-urgent {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #4b5678;
+  }
+
+  @media (max-width: 920px) {
     .pip-stage {
-      display: grid;
-      gap: 0.9rem;
       min-height: auto;
+      display: grid;
+      gap: 0.8rem;
     }
 
-    .pip-small {
+    .pip-card {
       position: static;
       width: 100%;
     }
   }
 </style>
 
-<div class="not-found-wrapper">
-  <section class="not-found-hero">
-    <h1 class="not-found-title">404｜页面走丢了，但希望不该走丢</h1>
-    <p class="not-found-subtitle">
-      您访问的页面不存在或已被移动。为了让这个页面更有意义，我们整理了中国大陆常见的寻亲/寻人公益平台入口，
-      愿每一次点击都能带来团圆的可能。
+<div class="nf-wrap">
+  <section class="nf-panel">
+    <span class="nf-badge">ERROR 404</span>
+    <h1 class="nf-title">We can’t find this page.</h1>
+    <p class="nf-subtitle">
+      The link may be broken, outdated, or moved. Use the primary navigation below to continue exploring Ribocentre Aptamer.
     </p>
 
-    <div class="nav-actions">
-      <a href="{{ site.baseurl }}/">返回首页</a>
-      <a href="{{ site.baseurl }}/sequences/">浏览数据库</a>
-      <a href="{{ site.baseurl }}/publications/">查看文献</a>
+    <div class="nf-actions">
+      <a class="primary" href="{{ site.baseurl }}/">Go to Home</a>
+      <a href="{{ site.baseurl }}/sequences/">Browse Sequences</a>
+      <a href="{{ site.baseurl }}/publications/">View Publications</a>
     </div>
 
-    <div class="pip-stage">
-      <article class="main-screen">
-        <div class="screen-bar">
-          <span class="dot red"></span>
-          <span class="dot yellow"></span>
-          <span class="dot green"></span>
-        </div>
-        <div class="screen-body">
-          <div class="main-card">
-            <h3>主画框：宝贝回家寻子网</h3>
-            <p>
-              民间公益平台，长期发布失踪儿童、寻亲线索与志愿者协作信息。若您有任何线索，
-              建议在核实信息后通过官方渠道提交。
-            </p>
-            <a href="https://www.baobeihuijia.com/" target="_blank" rel="noopener noreferrer">访问 宝贝回家官网 ↗</a>
-          </div>
-        </div>
-      </article>
+    <p class="nf-note">Optional resources are provided below as a secondary panel.</p>
 
-      <article class="pip-small pip-a">
-        <h4>画中画 01：公安部“团圆”系统</h4>
-        <p>国家平台，用于发布儿童失踪警情、关联线索与找回信息。</p>
-        <a href="https://qypt.mps.gov.cn/" target="_blank" rel="noopener noreferrer">打开 团圆系统 ↗</a>
-      </article>
+    <div class="pip-area">
+      <h2 class="pip-title">Picture-in-Picture Resource Panel (Secondary)</h2>
+      <p class="pip-intro">
+        This area highlights public family-reunion and missing-person resources in mainland China. It is intentionally secondary to the 404 recovery actions above.
+      </p>
 
-      <article class="pip-small pip-b">
-        <h4>画中画 02：今日头条寻人</h4>
-        <p>互联网公益协寻入口，覆盖走失者与失散亲属寻找场景。</p>
-        <a href="https://xunren.toutiao.com/" target="_blank" rel="noopener noreferrer">打开 头条寻人 ↗</a>
-      </article>
+      <div class="pip-stage">
+        <article class="pip-main">
+          <h3>Main PiP: Baobeihuijia</h3>
+          <p>Volunteer-supported family-reunion platform with missing-child and reunion-related leads.</p>
+          <a href="https://www.baobeihuijia.com/" target="_blank" rel="noopener noreferrer">Open Baobeihuijia ↗</a>
+        </article>
 
-      <article class="pip-small pip-c">
-        <h4>画中画 03：中国失踪人口档案库</h4>
-        <p>公益信息收录与协寻项目，可补充登记失踪人口资料。</p>
-        <a href="http://www.zgmqgr.com/" target="_blank" rel="noopener noreferrer">打开 档案库 ↗</a>
-      </article>
+        <article class="pip-card pip-1">
+          <h4>PiP 01: MPS Tuanyuan</h4>
+          <p>Official public-security system for missing-child alerts and recovery updates.</p>
+          <a href="https://qypt.mps.gov.cn/" target="_blank" rel="noopener noreferrer">Open Tuanyuan ↗</a>
+        </article>
+
+        <article class="pip-card pip-2">
+          <h4>PiP 02: Toutiao Xunren</h4>
+          <p>Internet-based assistance channel for finding missing relatives.</p>
+          <a href="https://xunren.toutiao.com/" target="_blank" rel="noopener noreferrer">Open Xunren ↗</a>
+        </article>
+
+        <article class="pip-card pip-3">
+          <h4>PiP 03: Missing Persons Archive</h4>
+          <p>Public-interest archival platform for missing-person information records.</p>
+          <a href="http://www.zgmqgr.com/" target="_blank" rel="noopener noreferrer">Open Archive ↗</a>
+        </article>
+      </div>
+
+      <p class="nf-urgent">Emergency reminder: for urgent missing-person cases, contact local police immediately (110).</p>
     </div>
 
-    <p class="note">温馨提示：如遇紧急失踪情形，请优先拨打 110 报警，并同步联系权威官方渠道。</p>
   </section>
 </div>
